@@ -16,7 +16,6 @@ const Hero = () => {
               alt=""
             />
           </div>
-
           <div>
             <div className="max-w-prose md:max-w-none">
               <h2 className="text-3xl font-bold text-gray-900 sm:text-3xl">
