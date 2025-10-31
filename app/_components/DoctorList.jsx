@@ -17,11 +17,7 @@ function DoctorList() {
       <div className=" grid grid-cols-2 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
         {doctorsList.map((data, i) => {
           return (
-            <div
-              key={data.id}
-              className="border-[1px] rounded-lg p-3 transition-all ease-in-out cursor-pointer hover:border-blue-600
-             hover:shadow-sm"
-            >
+            <div key={data.id} className="border-[1px] rounded-lg p-3 transition-all ease-in-out cursor-pointer hover:border-blue-600 hover:shadow-sm">
               <Image
                 src={data.image}
                 alt="icon"
