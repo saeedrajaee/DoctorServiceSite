@@ -1,8 +1,10 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
+
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
