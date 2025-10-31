@@ -138,19 +138,22 @@ export const reviewData = [
     id: 1,
     image: "/images/1.jpg",
     name: "Jone Doe",
-    reviews: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    reviews:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
   },
   {
     id: 2,
     image: "/images/3.jpg",
     name: "Jane Smith",
-    reviews: "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+    reviews:
+      "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
   },
   {
     id: 3,
     image: "/images/3.jpg",
     name: "Michael Brown",
-    reviews: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    reviews:
+      "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
   },
   {
     id: 4,
@@ -162,25 +165,29 @@ export const reviewData = [
     id: 5,
     image: "/images/5.jpg",
     name: "Chris Wilson",
-    reviews: "Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
+    reviews:
+      "Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
   },
   {
     id: 6,
     image: "/images/6.jpg",
     name: "Sarah Johnson",
-    reviews: "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
+    reviews:
+      "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
   },
   {
     id: 7,
     image: "/images/7.jpg",
     name: "David Lee",
-    reviews: "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
+    reviews:
+      "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
   },
   {
     id: 8,
     image: "/images/8.jpg",
     name: "Sophie White",
-    reviews: "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. ",
+    reviews:
+      "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. ",
   },
 ];
 
@@ -190,7 +197,7 @@ export const doctorCategory = [
     image: "/images/Dentist.png",
     name: "Dentist",
   },
-    {
+  {
     id: 2,
     image: "/images/heart.svg",
     name: "Cardiologist",
@@ -209,21 +216,79 @@ export const doctorCategory = [
     id: 5,
     image: "/images/ear.svg",
     name: "Otology",
-
   },
-    {
+  {
     id: 6,
     image: "/images/nurse.png",
     name: "Nurse",
   },
-   {
+  {
     id: 7,
     image: "/images/neurology1.png",
     name: "Neurologist",
   },
-     {
+  {
     id: 8,
     image: "/images/eye.png",
     name: "Eye Specilist",
+  },
+];
+
+export const doctorsList = [
+  {
+    id: 1,
+    image: "/images/d1.jpg",
+    name: "Dr. Brooke Dyment",
+    category: "Dentist",
+    yearsOfExprience:7,
+    address:"47 W 13th St, New York, NY 10011, USA"
+  },
+  {
+    id: 2,
+    image: "/images/d2.jpg",
+    name: "Dr. Emely Cronk",
+    category: "Cardiologist",
+    yearsOfExprience:17,
+    address:"721 Broadway, New York, NY 10003, USA"
+  },
+  {
+    id: 3,
+    image: "/images/d3.jpg",
+    name: "Dr. Donovan Runswick",
+    category: "Brain",
+    yearsOfExprience:8,
+    address:"838 Broadway, New York, NY 10003, USA"
+  },
+  {
+    id: 4,
+    image: "/images/d4.jpg",
+    name: "Dr. Jaiden Rapozo",
+    category: "General",
+    yearsOfExprience:10,
+    address:"55 Clark St, Brooklyn, NY 11201, USA"
+  },
+  {
+    id: 5,
+    image: "/images/d5.jpg",
+    name: "Dr. Lauren Gaona",
+    category: "Otology",
+    yearsOfExprience:2,
+    address:"East 14th Street, New York, NY 10003, United States"
+  },
+  {
+    id: 6,
+    image: "/images/d6.jpg",
+    name: "Dr. Jaxson Granucci",
+    category: "Nurse",
+    yearsOfExprience:25,
+    address:"44 W 4th St, New York, NY 10012, USA"
+  },
+  {
+    id: 7,
+    image: "/images/d7.jpg",
+    name: "Dr. Charlotte Itson",
+    category: "Neurologist",
+    yearsOfExprience:2,
+    address:"53 Washington Square S, New York, NY 10012, USA"
   },
 ];
