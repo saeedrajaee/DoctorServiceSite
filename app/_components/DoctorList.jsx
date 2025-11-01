@@ -15,7 +15,7 @@ function DoctorList() {
     <div className=" mb-10 px-10">
       <h2 className=" font-bold text-xl">Popular Doctor</h2>
       <div className=" grid grid-cols-2 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
-        {doctorsList.map((data, i) => {
+        {doctorsList.length>0?doctorsList.map((data, i) => {
           return (
             <div key={data.id} className="border-[1px] rounded-lg p-3 transition-all ease-in-out cursor-pointer hover:border-blue-600 hover:shadow-sm">
               <Image
@@ -41,7 +41,14 @@ function DoctorList() {
               </div>
             </div>
           );
-        })}
+        })
+      :
+      // Skelton Effect
+      [1,2,3,4,5,6].map((item,index)=>(
+
+        <div className=" h-[220px] bg-slate-200 w-full rounded-lg animate-pulse"> </div>
+      ))
+      }
       </div>
     </div>
   );

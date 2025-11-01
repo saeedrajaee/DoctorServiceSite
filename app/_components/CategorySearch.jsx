@@ -30,7 +30,7 @@ function CategorySearch() {
       </div>
       {/* Dispaly List of Category */}
       <div className=" grid grid-cols-2 mt-5ّ md:grid-cols-3 lg:grid-cols-4">
-        {doctorCategory.map((data, i) => {
+        {doctorCategory.length>0?doctorCategory.map((data, i) => {
           return (
             <div
               key={data.id}
@@ -43,7 +43,13 @@ function CategorySearch() {
               <label className=" text-blue-600 text-sm">{data.name}</label>
             </div>
           );
-        })}
+        })
+      :
+             [1,2,3,4,5,6].map((item,index)=>(
+
+        <div className="w-[130px] h-[120px] bg-slate-200 w-full rounded-lg animate-pulse"> </div>
+      ))
+      }
       </div>
     </div>
   );
