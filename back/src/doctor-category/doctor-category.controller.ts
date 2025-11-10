@@ -15,6 +15,7 @@ import { DoctorCategoryService } from './doctor-category.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
+import { PRODUCT_IMAGES } from './doctorCategory-images';
 
 @Controller('doctor-category')
 export class DoctorCategoryController {
@@ -39,7 +40,7 @@ export class DoctorCategoryController {
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
-        destination: './uploadsFile',
+        destination: PRODUCT_IMAGES,
         filename: (req, file, callback) => {
           // const uniqueSuffix = Date.now() + '-' + Math.random() * 1e9;
           callback(null, `${req.params.Id}${extname(file.originalname)}`);
@@ -56,8 +57,6 @@ export class DoctorCategoryController {
 
   @Get(':doctorCategoryId')
   async getDoctorCategory(@Param('doctorCategoryId') doctorCategoryId: string) {
-        console.log("doctorCategoryId",doctorCategoryId)
-
     return this.doctorCategoryService.getDoctorCategory(+doctorCategoryId);
   }
 

@@ -18,7 +18,7 @@ export class DoctorCategoryService {
     });
   }
 
-  async getLibrarys() {
+  async getDoctorCategorys() {
     const images = await this.prismaService.doctorCategory.findMany();
     return Promise.all(
       images.map(async (image) => ({
@@ -40,25 +40,25 @@ export class DoctorCategoryService {
     }
   }
 
-  async getDoctorCategorys() {
-    const datas = await this.prismaService.doctorCategory.findMany();
-    return Promise.all(
-      datas.map(async (data) => ({
-        ...data,
-      })),
-    );
-  }
+  // async getDoctorCategorys() {
+  //   const datas = await this.prismaService.doctorCategory.findMany();
+  //   return Promise.all(
+  //     datas.map(async (data) => ({
+  //       ...data,
+  //     })),
+  //   );
+  // }
 
-  async getDoctorCategory(doctorCategoryId: number) {
+  async getDoctorCategory(doctorCategorysId: number) {
     try {
       return {
         ...(await this.prismaService.doctorCategory.findUniqueOrThrow({
-          where: { id: doctorCategoryId },
+          where: { id: doctorCategorysId },
         })),
       };
     } catch (err) {
       throw new NotFoundException(
-        `Flow not found with ID ${doctorCategoryId}`,
+        `Flow not found with ID ${doctorCategorysId}`,
       );
     }
   }

@@ -2,12 +2,14 @@
 import { useFormState } from "react-dom";
 import { Input } from "../../../../../../components/ui/input"
 import { Button } from "../../../../../../components/ui/button"
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { createDoctorCategory } from "../../../api/doctorCategory.api";
+import { UploadCloudIcon } from "lucide-react";
 
 function DoctorCategoryIndex({ searchParams }) {
     const { errorMessage } = searchParams;
     const [state, formAction] = useActionState(createDoctorCategory, { error: "" });
+    const [value, setValue] = useState("");
 
     return (
         <div>
@@ -28,10 +30,21 @@ function DoctorCategoryIndex({ searchParams }) {
                         </div>
                     )
                 }
-                <div className="grid gap-2">
-                    <label required={true}>Doctor Category Name</label>
-                    <Input placeholder="Enter Doctor Category Name" name="name" />
+                <div className=" flex flex-col-2 items-center justify-between gap-2">
+                    <div className="grid gap-2">
+                        <label required={true}>Doctor Category Name</label>
+                        <Input placeholder="Enter Doctor Category Name" name="name" />
+                    </div>
+                    <div className="grid gap-2">
+                        <label required={true}><UploadCloudIcon /></label>
+
+                        <Input name="file" id="file" type="file"
+                            onChange={(event) => console.log(event.target.files)}
+                            className=" bg-blue-200 border cursor-pointer" />
+                    </div>
                 </div>
+
+
                 <Button className="w-52 col-span-2 mt-0">Submit</Button>
                 <div className="grid gap-2">
                 </div>

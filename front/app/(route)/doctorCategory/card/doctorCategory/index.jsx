@@ -1,20 +1,22 @@
-"use client"
-import { EditIcon, Trash2Icon } from 'lucide-react';
-import Link from 'next/link';
-import DeleteConfirmationModal from "../../../../../components/ui/DeleteConfirmationModal"
-import { useState } from 'react';
-import { deleteDoctorCategory } from '../../api/doctorCategory.api';
-import { Button } from '../../../../../components/ui/button';
+"use client";
+import { EditIcon, Trash2Icon } from "lucide-react";
+import Link from "next/link";
+import DeleteConfirmationModal from "../../../../../components/ui/DeleteConfirmationModal";
+import { useState } from "react";
+import { deleteDoctorCategory } from "../../api/doctorCategory.api";
+import { Button } from "../../../../../components/ui/button";
+import Image from "next/image";
+import { getDoctorCategoryImage } from "./product-image";
+import { API_URL } from "../../../../../util/constants.api";
 
 function CategoryIndex({ DoctorCategory }) {
-
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedId, setSelectedId] = useState();
 
   const handleDelete = async () => {
-    await deleteDoctorCategory(selectedId)
-    setIsDeleteModalOpen(false)
-    setSelectedId(null)
+    await deleteDoctorCategory(selectedId);
+    setIsDeleteModalOpen(false);
+    setSelectedId(null);
   };
 
   return (
@@ -25,8 +27,11 @@ function CategoryIndex({ DoctorCategory }) {
           Doctor Category Management{" "}
         </h1>
         <button>
-          <Link href="/doctorCategory/mod/add" className="p-3 m-1 rounded-md bg-blue-500 text-gray-50 hover:bg-white
-            hover:text-blue-900 hover:shadow-md">
+          <Link
+            href="/doctorCategory/mod/add"
+            className="p-3 m-1 rounded-md bg-blue-500 text-gray-50 hover:bg-white
+            hover:text-blue-900 hover:shadow-md"
+          >
             Add Doctor Category
           </Link>
         </button>
@@ -37,8 +42,9 @@ function CategoryIndex({ DoctorCategory }) {
       <div className="mt-4 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <table className="overflow-y-auto mx-auto w-full">
           <thead className="border-y-2 border-gray-400">
-            <tr className='border-b border-gray-300;'>
+            <tr className="border-b border-gray-300;">
               <th> Sr. No.</th>
+              <th> Catalog</th>
               <th>Doctor Category</th>
               <th>Action</th>
             </tr>
@@ -48,6 +54,13 @@ function CategoryIndex({ DoctorCategory }) {
             {DoctorCategory.map((item, key) => (
               <tr key={item.id}>
                 <td>{key + 1}</td>
+                <td className="flex justify-center items-center gap-x-3 mt-4">
+                  <img
+                    src={getDoctorCategoryImage(item.id)}
+                    alt="Description of my image"
+                    className=" w-15 h-auto"
+                  />
+                </td>
                 <td>{item.name}</td>
                 <td className="flex justify-center items-center gap-x-3">
                   <Link
@@ -80,7 +93,7 @@ function CategoryIndex({ DoctorCategory }) {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default CategoryIndex
+export default CategoryIndex;

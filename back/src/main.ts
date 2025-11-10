@@ -6,7 +6,7 @@ import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  app.useStaticAssets(join(__dirname, '..', 'uploadsFile'));
+  app.useStaticAssets(join(__dirname, '..', 'public/images'));
   await app.listen(app.get(ConfigService).getOrThrow('PORT'));
 }
 bootstrap();
