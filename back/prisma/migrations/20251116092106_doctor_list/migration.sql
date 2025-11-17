@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "DoctorList" ALTER COLUMN "yearsOfExprience" SET DATA TYPE DOUBLE PRECISION;
